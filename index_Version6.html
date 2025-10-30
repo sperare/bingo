@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Bingo ze zniczami</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="page">
+    <header class="site-header">
+      <h1>Bingo ze zniczami</h1>
+      <p class="lead">Kliknij blok znicza, aby go zaznaczyć. Po zaznaczeniu wszystkich pojawi się BINGO!</p>
+    </header>
+
+    <main class="site-main">
+      <section class="board-intro">
+        <p>Kliknij dowolny kafelek (cały blok), aby go zaznaczyć. Powtórne kliknięcie odznacza. Stan zaznaczeń jest zapisywany i przetrwa odświeżenie.</p>
+      </section>
+
+      <div class="progress-bar-wrap" aria-hidden="false">
+        <div class="progress-info">
+          <div class="progress-text">Postęp: <span id="progress-count">0</span>/10</div>
+          <div id="progress-pct" class="progress-pct">0%</div>
+        </div>
+        <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+          <div id="progress-fill" class="progress-fill" style="width:0%"></div>
+        </div>
+      </div>
+
+      <div class="controls-top">
+        <button id="reset-btn" class="reset-btn">Resetuj postęp</button>
+      </div>
+
+      <section id="bingo-board" class="board" aria-label="Karta bingo ze zniczami">
+        <!-- Kafelki będą generowane przez script.js -->
+      </section>
+
+      <div id="bingo-toast" class="bingo-toast" role="status" aria-live="polite" hidden>
+        BINGO!
+      </div>
+
+      <!-- kontener na konfetti (rysowane dynamicznie) -->
+      <canvas id="confetti-canvas" class="confetti-canvas" aria-hidden="true"></canvas>
+    </main>
+
+    <footer class="site-footer">
+      <p>Stworzono z myślą o demonstracji — dodaj swoje zdjęcia do folderu <code>images/</code>.</p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
