@@ -2,16 +2,16 @@
 // bez wczesnego pobierania elementu, defensywne sprawdzenia.
 
 const candleData = [
-  { id: 1, title: "Znicz #1 — Basic", img: "images/candle1.jpg", desc: "Prosty, tani znicz plastikowy — podstawowa opcja." },
-  { id: 2, title: "Znicz #2 — Plastikowy", img: "images/candle2.jpg", desc: "Najczęściej spotykany w marketach, ekonomiczny plastik." },
-  { id: 3, title: "Znicz #3 — Mały", img: "images/candle3.jpg", desc: "Mały, kompaktowy model — oszczędny i poręczny." },
-  { id: 4, title: "Znicz #4 — Średni", img: "images/candle4.jpg", desc: "Standardowy rozmiar, nieco lepsze wykonanie." },
-  { id: 5, title: "Znicz #5 — Zdobiony", img: "images/candle5.jpg", desc: "Znikoma dekoracja, metaliczne wykończenie." },
-  { id: 6, title: "Znicz #6 — Z wieńcem", img: "images/candle6.jpg", desc: "Znicz z dodatkowymi zdobieniami i wieńcem." },
-  { id: 7, title: "Znicz #7 — Szklany", img: "images/candle7.jpg", desc: "Szklany klosz, solidniejsze wykonanie." },
-  { id: 8, title: "Znicz #8 — Duży", img: "images/candle8.jpg", desc: "Duży rozmiar, dłużej płonie." },
-  { id: 9, title: "Znicz #9 — Luksusowy", img: "images/candle9.jpg", desc: "Bardziej elegancki design, lepsze materiały." },
-  { id: 10, title: "Znicz #10 — Premium", img: "images/candle10.jpg", desc: "Najbardziej premium: zdobienia, grube szkło, długi czas palenia." },
+  { id: 1, title: "Znicz #1 — Bieda", img: "images/candle1.jpg", desc: "Czerwone lub żółte szkło i metalowa pokrywka - bieda aż nie piszczy" },
+  { id: 2, title: "Znicz #2 — Ceramiczny", img: "images/candle2.jpg", desc: "Ekologicznie, prosto ale wizualnie przeciętnie" },
+  { id: 3, title: "Znicz #3 — Świąteczny", img: "images/candle3.gif", desc: "Choineczka albo z barankiem - trochę nie ta pora ale eco" },
+  { id: 4, title: "Znicz #4 — Klasyczny", img: "images/candle4.jpg", desc: "Klasyka - podstawka z plastiku, szklany korpus z plastikowymi wzorkami oraz pokrywka ,która nie pasuje" },
+  { id: 5, title: "Znicz #5 — Z dedykacją", img: "images/candle5.jpg", desc: "Znikoma dekoracja, metaliczne wykończenie." },
+  { id: 6, title: "Znicz #6 — Elektryczny", img: "images/candle6.jpg", desc: "Wkład z czerownym światełkiem na baterie - powiew nowoczesności i elektrośmieci" },
+  { id: 7, title: "Znicz #7 — AAAA", img: "images/candle7.jpg", desc: "AAA" },
+  { id: 8, title: "Znicz #8 — Glamour", img: "images/candle8.jpg", desc: "Srebro świecidełka, prosto z Home&You albo Pepco" },
+  { id: 9, title: "Znicz #9 — Winda do nieba", img: "images/candle9.gif", desc: "Karta wyjścia z czyścca dla zmarłego, nobilitacja na ziemi" },
+  { id: 10, title: "Znicz #10 — Król cyganów", img: "images/candle10.jpg", desc: "Don Wasyl wśród zniczy - zajmuje pół pomnika, wzbudza zazdrość w promieniu 3 alejek" },
 ];
 
 let selectedSet = new Set();
