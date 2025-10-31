@@ -3,48 +3,106 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Bingo ze zniczami</title>
+  <!-- favicon jako emoji znicza (SVG data URL) -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ctext y='50%25' x='50%25' dominant-baseline='middle' text-anchor='middle' font-size='44'%3E%F0%9F%95%AF%EF%B8%8F%3C/text%3E%3C/svg%3E">
+  <title>Zaduszkowe bingo 🕯️</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <div class="page">
     <header class="site-header">
-      <h1>Bingo ze zniczami</h1>
-      <p class="lead">Kliknij blok znicza, aby go zaznaczyć. Po zaznaczeniu wszystkich pojawi się BINGO!</p>
+      <h1 class="page-title">Zaduszkowe bingo 🕯️</h1>
+      <p class="lead">Kliknij blok, aby zaznaczyć — postęp jest zapisywany lokalnie.</p>
     </header>
 
     <main class="site-main">
-      <section class="board-intro">
-        <p>Kliknij dowolny kafelek (cały blok), aby go zaznaczyć. Powtórne kliknięcie odznacza. Stan zaznaczeń jest zapisywany i przetrwa odświeżenie.</p>
+      <!-- RUNDA ZNICZOWA -->
+      <section class="round">
+        <h2 class="round-title">RUNDA ZNICZOWA</h2>
+
+        <div class="progress-bar-wrap" aria-hidden="false">
+          <div class="progress-info">
+            <div class="progress-text">Postęp: <span id="znicz-count">0</span>/10</div>
+            <div id="znicz-pct" class="progress-pct">0%</div>
+          </div>
+          <div id="znicz-progressbar" class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+            <div id="znicz-fill" class="progress-fill green"></div>
+          </div>
+        </div>
+
+        <section id="znicz-board" class="board" aria-label="Runda zniczowa">
+          <!-- Kafelki zniczowe będą generowane przez script.js -->
+        </section>
       </section>
 
-      <div class="progress-bar-wrap" aria-hidden="false">
-        <div class="progress-info">
-          <div class="progress-text">Postęp: <span id="progress-count">0</span>/10</div>
-          <div id="progress-pct" class="progress-pct">0%</div>
+      <!-- RUNDA BONUSOWA -->
+      <section class="round">
+        <h2 class="round-title">RUNDA BONUSOWA</h2>
+
+        <div class="progress-bar-wrap" aria-hidden="false">
+          <div class="progress-info">
+            <div class="progress-text">Postęp: <span id="bonus-count">0</span>/2</div>
+            <div id="bonus-pct" class="progress-pct">0%</div>
+          </div>
+          <div id="bonus-progressbar" class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+            <div id="bonus-fill" class="progress-fill gold"></div>
+          </div>
         </div>
-        <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
-          <div id="progress-fill" class="progress-fill" style="width:0%"></div>
+
+        <section id="bonus-board" class="board" aria-label="Runda bonusowa">
+          <!-- Kafelki bonusowe będą generowane przez script.js -->
+        </section>
+      </section>
+
+      <!-- RUNDA SŁOWNA -->
+      <section class="round">
+        <h2 class="round-title">RUNDA SŁOWNA</h2>
+
+        <div class="progress-bar-wrap" aria-hidden="false">
+          <div class="progress-info">
+            <div class="progress-text">Postęp: <span id="slowna-count">0</span>/8</div>
+            <div id="slowna-pct" class="progress-pct">0%</div>
+          </div>
+          <div id="slowna-progressbar" class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+            <div id="slowna-fill" class="progress-fill purple"></div>
+          </div>
         </div>
-      </div>
+
+        <section id="slowna-board" class="board text-board" aria-label="Runda słowna">
+          <!-- Kafelki słowne będą generowane przez script.js -->
+        </section>
+      </section>
 
       <div class="controls-top">
         <button id="reset-btn" class="reset-btn">Resetuj postęp</button>
       </div>
+    </main>
 
-      <section id="bingo-board" class="board" aria-label="Karta bingo ze zniczami">
-        <!-- Kafelki będą generowane przez script.js -->
-      </section>
-
-      <div id="bingo-toast" class="bingo-toast" role="status" aria-live="polite" hidden>
-        BINGO!
+    <footer class="site-footer">
+      <div class="summary card">
+        <h3>Podsumowanie punktów</h3>
+        <div class="summary-row">
+          <div class="summary-label">RUNDA ZNICZOWA</div>
+          <div id="summary-znicz" class="summary-value znicz-color">0 / 10</div>
+        </div>
+        <div class="summary-row">
+          <div class="summary-label">RUNDA BONUSOWA</div>
+          <div id="summary-bonus" class="summary-value bonus-color">0 / 2</div>
+        </div>
+        <div class="summary-row">
+          <div class="summary-label">RUNDA SŁOWNA</div>
+          <div id="summary-slowna" class="summary-value slowna-color">0 / 8</div>
+        </div>
       </div>
 
-      <!-- kontener na konfetti (rysowane dynamicznie) -->
-      <canvas id="confetti-canvas" class="confetti-canvas" aria-hidden="true"></canvas>
-    </main>
+      <p class="credit">Stworzono z myślą o demonstracji. Jeśli chcesz obrazy dla rundy zniczowej, dodaj je do folderu <code>images/</code>.</p>
+    </footer>
   </div>
 
+  <!-- Toasty (pojedyncze, wielokrotne) -->
+  <div id="toast-container" aria-live="polite" class="toast-container"></div>
+
+  <canvas id="confetti-canvas" class="confetti-canvas" aria-hidden="true"></canvas>
   <script src="script.js"></script>
 </body>
 </html>
