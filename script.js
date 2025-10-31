@@ -3,12 +3,12 @@
 
 const candleData = [
   { id: 1, title: "Znicz #1 — Bieda", img: "images/candle1.jpg", desc: "Czerwone lub żółte szkło i metalowa pokrywka - bieda aż nie piszczy" },
-  { id: 2, title: "Znicz #2 — Ceramiczny", img: "images/candle2.jpg", desc: "Ekologicznie, prosto ale wizualnie przeciętnie" },
-  { id: 3, title: "Znicz #3 — Świąteczny", img: "images/candle3.gif", desc: "Choineczka albo z barankiem - trochę nie ta pora ale eco" },
+  { id: 2, title: "Znicz #2 — Starożytna Grecja", img: "images/candle2.jpg", desc: "Trochę polski cmentarz a trochę świątynia Delficka" },
+  { id: 3, title: "Znicz #3 — Last Christmas", img: "images/candle3.gif", desc: "Choineczka albo żółty z barankiem - trochę nie ta pora ale jest eco" },
   { id: 4, title: "Znicz #4 — Klasyczny", img: "images/candle4.jpg", desc: "Klasyka - podstawka z plastiku, szklany korpus z plastikowymi wzorkami oraz pokrywka ,która nie pasuje" },
-  { id: 5, title: "Znicz #5 — Z dedykacją", img: "images/candle5.jpg", desc: "Znikoma dekoracja, metaliczne wykończenie." },
-  { id: 6, title: "Znicz #6 — Elektryczny", img: "images/candle6.jpg", desc: "Wkład z czerownym światełkiem na baterie - powiew nowoczesności i elektrośmieci" },
-  { id: 7, title: "Znicz #7 — AAAA", img: "images/candle7.jpg", desc: "AAA" },
+  { id: 5, title: "Znicz #5 — Poeta", img: "images/candle5.jpg", desc: "Trochę polotu i finezji w tym smutnym jak ... miejscu" },
+  { id: 6, title: "Znicz #6 — Nekroelektro", img: "images/candle6.jpg", desc: "Wkład z czerownym światełkiem na baterie - powiew nowoczesności i elektrośmieci" },
+  { id: 7, title: "Znicz #7 — Bozia", img: "images/candle7.jpg", desc: "Znicz z bozią, +5 do życia wiecznego" },
   { id: 8, title: "Znicz #8 — Glamour", img: "images/candle8.jpg", desc: "Srebro świecidełka, prosto z Home&You albo Pepco" },
   { id: 9, title: "Znicz #9 — Winda do nieba", img: "images/candle9.gif", desc: "Karta wyjścia z czyścca dla zmarłego, nobilitacja na ziemi" },
   { id: 10, title: "Znicz #10 — Król cyganów", img: "images/candle10.jpg", desc: "Don Wasyl wśród zniczy - zajmuje pół pomnika, wzbudza zazdrość w promieniu 3 alejek" },
